@@ -34,8 +34,6 @@ nav a{
 
 nav a:hover{
     color: #C78C19;
-    text-decoration: underline;
-
 }
 
 .products{
@@ -96,14 +94,11 @@ footer{
     margin-top: 20px;
 }
 
-main{
-    width: 940px;
-    margin: 0 auto;
+
+form, .table-content{
+    margin: 40px 10% ;
 }
 
-form{
-    margin: 40px 0;
-}
 
 form label, form legend{
     display: block;
@@ -161,11 +156,22 @@ td, th{
     width: 100%;
 }
 
+.main{
+    padding:  3em 0;
+    background: #FEFEFE;
+    width: 940px;
+    margin: 0 auto;
+}
+
 .main-title{
     text-align: center;
     font-size: 2em;
     margin: 0 0 1em;
     clear: left;
+}
+
+.itens:before{
+    content: "★";
 }
 
 .main p{
@@ -195,6 +201,7 @@ td, th{
 
 .benefits{
     padding: 3em 0;
+    background: #888888;
 }
 
 .benefits-list{
@@ -205,16 +212,23 @@ td, th{
 
 .benefitsImg{
     width: 60%;
+    box-shadow: 10px 10px 10px #000000;
 }
 
 .utensils{
-    width: 150px;
+    width: 25%;
     float: left;
     margin: 0 20px 20px 0;
 }
 
 .map{
     padding: 3em 0;
+    background: linear-gradient(#FEFEFE, #888888);
+}
+
+.map-content{
+    width: 940px;
+    margin: 0 auto;
 }
 
 .map p{
@@ -225,4 +239,21 @@ td, th{
 .video{
     width: 560px;
     margin: 2em auto;
+}
+
+@media screen and (max-width: 400px){
+    .box, .main, .content-benefits, .map-content, .video{
+        width: auto;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    nav{
+        position: static;
+    }
+    .benefits-list, .benefitsImg{
+        width: 100%;
+    }
 }
