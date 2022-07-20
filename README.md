@@ -21,11 +21,11 @@ Conjunto de atividades realizadas durante cursos.
 <li><a href="curso-javascript-back-end">Formação Back-end em JavaScript</a></li>
 <ol>
 <li><a href="curso-javascript-back-end/nivelamento">Nivelamento</a></li>
-<li><a href="curso-javascript-back-end/modulo-I">Módulo I</a></li>
-<li><a href="curso-javascript-back-end/modulo-II">Módulo II</a></li>
-<li><a href="curso-javascript-back-end/modulo-III">Módulo III</a></li>
-<li><a href="curso-javascript-back-end/modulo-IV">Módulo IV</a></li>
-<li><a href="curso-javascript-back-end/modulo-V">Módulo V</a></li>
+<li><a href="curso-javascript-back-end/modulo-I">Lógica da Programação </a></li>
+<li><a href="curso-javascript-back-end/modulo-II">Programação Orientada a Objetos</a></li>
+<li><a href="curso-javascript-back-end/modulo-III">Estrutura de Dados</a></li>
+<li><a href="curso-javascript-back-end/modulo-IV">Banco de Dados</a></li>
+<li><a href="curso-javascript-back-end/modulo-V">Técnicas de Programação</a></li>
 </ol>
 <li><a href="DIO">Aulas da DIO</a></li>
 <ol>
