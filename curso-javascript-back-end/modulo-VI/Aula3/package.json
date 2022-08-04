@@ -1,0 +1,16 @@
+{
+  "name": "Aula3",
+  "version": "1.0.0",
+  "description": "- **1xx** - Informação\r - **2xx** - Status de sucesso\r - **3xx** - Categoria de redirecionamento\r - **4xx** - Erro no Cliente\r - **5xx** - Erro no server",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
