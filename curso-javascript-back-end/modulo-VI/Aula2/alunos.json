@@ -1,0 +1,28 @@
+[
+    {
+        "id": "1",
+        "name": "Sabrina",
+        "idade": "26",
+        "username":"sabrinachs",
+        "senha": "123456",
+        "email": "sabrinach08@gmail.com"
+    },
+
+    {
+        "id": "2",
+        "name": "Paloma",
+        "idade": "33",
+        "username":"palomachs",
+        "senha": "123456",
+        "email": "palomacha100@gmail.com"
+    },
+    {
+        "id": "3",
+        "name": "Vera",
+        "idade": "55",
+        "username":"verachax",
+        "senha": "123456",
+        "email": "verachax@gmail.com"
+    }
+]
+
