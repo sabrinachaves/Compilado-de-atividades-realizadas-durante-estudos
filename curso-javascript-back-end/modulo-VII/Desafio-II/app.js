@@ -21,6 +21,12 @@ app.get("/todos", (req, res) =>{
 app.get("/flight/:from/:to", (req, res) =>{
     const from = req.params.from.toUpperCase();
     const to = req.params.to.toUpperCase();
+    const regex = /^[A-z]{3}$/;
+
+    //Essa validação é apenas para testar o regex e informar onde está o erro, pois se digitasse mais de 3 caracteres, já cairia na validação de "Aeroporto não encontrado"
+    if(!regex.test(from) || !regex.test(to)){
+        return res.json({ erroMessage: "A sigla do aeroporto possui apenas 3 caracteres!" });
+    }
 
     db.all("SELECT * FROM airports WHERE initials = ? or initials = ?", from, to, (err, rows)=>{
         if(err){
