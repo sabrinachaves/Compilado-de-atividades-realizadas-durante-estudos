@@ -8,46 +8,64 @@ const { PORT } = env.config().parsed;
 
 app.use(express.json());
 
-app.get("/todos", (req, res) =>{
-    db.all('SELECT * FROM airports', (err, rows)=>{
-        if(err){
-            return res.json({ erroMessage: err});
+app.get("/todos", (req, res) => {
+    db.all('SELECT * FROM airports', (err, rows) => {
+        if (err) {
+            return res.json({ erroMessage: err });
         }
 
         return res.json(rows);
     });
 });
 
-app.get("/flight/:from/:to", (req, res) =>{
+app.get("/flight/:from/:to", (req, res) => {
     const from = req.params.from.toUpperCase();
     const to = req.params.to.toUpperCase();
     const regex = /^[A-z]{3}$/;
 
     //Essa validação é apenas para testar o regex e informar onde está o erro, pois se digitasse mais de 3 caracteres, já cairia na validação de "Aeroporto não encontrado"
-    if(!regex.test(from) || !regex.test(to)){
+    if (!regex.test(from) || !regex.test(to)) {
         return res.json({ erroMessage: "A sigla do aeroporto possui apenas 3 caracteres!" });
     }
 
-    db.all("SELECT * FROM airports WHERE initials = ? or initials = ?", from, to, (err, rows)=>{
-        if(err){
+    db.all("SELECT * FROM airports WHERE initials = ? or initials = ?", from, to, (err, rows) => {
+        if (err) {
             return res.json({ errorMessage: err });
         }
 
         const objectFrom = rows.find(rows => rows.initials == from);
         const objectTo = rows.find(rows => rows.initials == to);
 
-        if(!objectFrom || !objectTo){
-            return res.json({ erroMessage: "Aeroporto não encontrado!"});
+        if (!objectFrom || !objectTo) {
+            return res.json({ erroMessage: "Aeroporto não encontrado!" });
         }
 
         return res.json({
-            "origem": from, 
-            "destino": to, 
+            "origem": from,
+            "destino": to,
             "descricao": `Voo partindo do ${objectFrom.name} (${objectFrom.city}) até ${objectTo.name} (${objectTo.city})`
         });
     });
 });
 
-app.listen(PORT, ()=>{
+app.get("/:airport", (req, res) => {
+    const airport = req.params.airport.toUpperCase();
+    const regex = /^[A-z]{3}$/;
+
+    if (!regex.test(airport))
+        return res.json({ erroMessage: "A sigla do aeroporto possui apenas 3 caracteres!" });
+
+    db.all('SELECT * FROM airports WHERE initials = ?', airport, (err, rows) => {
+        if (err)
+            res.json({ erroMessage: "Ocorreu um erro ao consultar o aerporto." });
+
+        const name = rows.map(airport => airport.name);
+        const city = rows.map(airport => airport.city)
+
+        res.json({ "initials": `${airport}`, "name": `${name}`, "city": `${city}` });
+    });
+});
+
+app.listen(PORT, () => {
     console.log(`Server running at ${PORT}...`);
 })
