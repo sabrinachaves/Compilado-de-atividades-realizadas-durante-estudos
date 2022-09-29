@@ -1,0 +1,14 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    font-size: x-large;
+    text-align: center;
+    font-weight: 600;
+}
+p{
+  font-size: medium;
+}
