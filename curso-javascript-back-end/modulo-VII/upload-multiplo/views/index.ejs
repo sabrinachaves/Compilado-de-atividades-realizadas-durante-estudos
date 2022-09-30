@@ -14,8 +14,8 @@
 <div class="container">
     <form action="/upload" method="post" enctype="multipart/form-data">
         <div class="mb-3">
-          <label for="single" class="form-label">Selecione um arquivo</label>
-          <input type="file" class="form-control" id="single" name="single">
+          <label for="files" class="form-label">Selecione os arquivos</label>
+          <input type="file" class="form-control" id="files" name="files" accept="image/*" multiple>
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>
       </form>

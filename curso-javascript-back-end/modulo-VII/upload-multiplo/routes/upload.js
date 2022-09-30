@@ -1,20 +1,13 @@
 const express = require("express");
 const router = express.Router(); //construtor de rotas do contexto do express
+const { index, success, error, upload } = require("../controllers/upload");
 
-router.get("/", (req, res) => {
-    res.render("index");
-});
+router.get("/", index);
 
-router.post("/upload", (req, res) =>{
-    
-});
+router.post("/upload", upload);
 
-router.get("/success", (req, res) =>{
-    res.render("success");
-});
+router.get("/success", success);
 
-router.get("/error", (req, res)=>{
-    res.render("error");
-});
+router.get("/error", error);
 
 module.exports = router;
