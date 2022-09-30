@@ -40,7 +40,7 @@ exports.upload = (req, res) =>{
     multipleUpload(req, res, (err) =>{
         console.log(req.files);
         if(req.files.length > 0){
-            res.render("success");
+            res.render("success", { images: req.files});
         }else{
             res.render("error");
         }

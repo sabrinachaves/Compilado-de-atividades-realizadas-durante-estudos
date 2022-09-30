@@ -16,6 +16,9 @@
         <div class="alert alert-success" role="alert">
             Upload realizado com sucesso!
             <p><a href="/">Voltar</a></p>
+            <% images.forEach(image =>     {%> 
+              <img src="<%=image.path.replace("public", "").replace(/\\/g, "/")%>">
+              <% }); %> 
           </div>
         <h1></h1>
     </div>
